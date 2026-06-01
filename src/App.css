@@ -273,7 +273,19 @@ img { max-width: 100%; display: block; }
 }
 .mobile-menu a:last-of-type { border-bottom: none; }
 .mobile-menu a:hover { color: var(--green); }
-.mobile-menu .btn { margin-top: 14px; justify-content: center; }
+.mobile-menu .btn {
+  margin-top: 14px;
+  justify-content: center;
+  background: var(--amber);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(233,151,20,.35);
+}
+.mobile-menu .btn:hover, .mobile-menu .btn:active {
+  background: var(--amber-deep);
+  transform: translateY(-2px);
+}
 
 @media (max-width: 800px) {
   .navbar-inner {
