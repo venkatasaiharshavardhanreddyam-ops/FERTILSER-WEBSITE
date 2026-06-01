@@ -33,23 +33,22 @@ export default function Footer() {
             </div>
           </div>
           <div className="map-card">
-            <div className="map-placeholder">
-              <div className="map-pin-pulse" />
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <div style={{ fontWeight: 800, color: "var(--white)", fontSize: "1rem", marginBottom: 4 }}>Sri Aswartha Narayana Swamy Traders</div>
-                <div style={{ fontSize: ".82rem", opacity: .7 }}>1-7-483, Parnapalli Circle<br />Pulivendula, YSR District, AP 516390</div>
-              </div>
-              <div style={{ fontSize: ".75rem", opacity: .5, fontStyle: "italic" }}>
-                Replace with embedded Google Maps iframe
-              </div>
+            <div className="map-embed">
+              <iframe
+                title="Sri Aswartha Narayana Swamy Traders location"
+                src="https://maps.google.com/maps?q=1-7-483,+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390&z=16&output=embed"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div className="map-card-footer">
-              <span>📍 Open in Maps App</span>
-              <a href="https://maps.google.com" target="_blank" rel="noreferrer">
+              <span>📍 Exact store location shown on Google Maps</span>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Get Directions {Ic.arrow}
               </a>
             </div>
