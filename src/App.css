@@ -289,14 +289,26 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 800px) {
   .navbar-inner {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     height: auto;
     gap: 12px;
   }
 
   .logo {
-    width: 100%;
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .logo > div {
+    min-width: 0;
+  }
+
+  .logo > div > div {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .nav-links, .navbar-inner > .btn { display: none; }
