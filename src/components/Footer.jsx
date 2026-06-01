@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="map-card-footer">
               <span>📍 Exact store location shown on Google Maps</span>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
+                href="https://www.google.com/maps/search/?api=1&query=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
                 target="_blank"
                 rel="noreferrer"
               >

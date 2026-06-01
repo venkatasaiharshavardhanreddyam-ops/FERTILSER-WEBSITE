@@ -24,7 +24,7 @@ export default function Hero() {
             <div className="hero-ctas">
               <a href="tel:+918179914909" className="btn btn-amber">{Ic.phone} Call Shop Now</a>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
+                href="https://www.google.com/maps/search/?api=1&query=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-outline-green"
