@@ -23,7 +23,14 @@ export default function Hero() {
             </p>
             <div className="hero-ctas">
               <a href="tel:+918179914909" className="btn btn-amber">{Ic.phone} Call Shop Now</a>
-              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="btn btn-outline-green">{Ic.dir} Get Directions</a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=1-7-483+Parnapalli+Circle,+Pulivendula,+YSR+District,+Andhra+Pradesh+516390"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-outline-green"
+              >
+                {Ic.dir} Get Directions
+              </a>
             </div>
             <div className="hero-trust">
               {[["ISI Certified Brands", Ic.check], ["Free Farm Delivery", Ic.truck], ["Expert Soil Advice", Ic.leaf]].map(([text, icon]) => (
