@@ -111,12 +111,14 @@ img { max-width: 100%; display: block; }
 .btn-outline-green:hover, .btn-outline-green:active {
   background: var(--green);
   color: var(--white);
+  flex-shrink: 1;
   transform: translateY(-2px);
 }
 .btn-whatsapp {
+  overflow: hidden;
   background: #25D366;
   color: var(--white);
-  font-size: .88rem;
+  white-space: normal;
   padding: 11px 20px;
   box-shadow: 0 4px 14px rgba(37,211,102,.3);
 }
@@ -190,6 +192,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.2;
   flex-wrap: wrap;
   min-width: 0;
+  flex: 0 1 auto;
 }
 .logo > div {
   min-width: 0;
@@ -214,6 +217,8 @@ img { max-width: 100%; display: block; }
   gap: 28px;
   list-style: none;
   white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .nav-links a {
   font-size: .9rem;
@@ -237,6 +242,8 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  min-width: 0;
+  flex: 0 1 auto;
 }
 
 .lang-select {
@@ -246,7 +253,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid #c4d9c8;
   border-radius: 10px;
   height: 56px;
-  min-width: 140px;
+  min-width: 120px;
   padding: 0 1rem;
   appearance: none;
   outline: none;
@@ -336,7 +343,7 @@ img { max-width: 100%; display: block; }
     overflow-wrap: anywhere;
   }
 
-  .nav-links, .navbar-inner > .btn { display: none; }
+  .nav-links, .navbar-actions { display: none; }
   .hamburger { display: flex; }
   .mobile-menu .lang-select {
     width: 100%;
