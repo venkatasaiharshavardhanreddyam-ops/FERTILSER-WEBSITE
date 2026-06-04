@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { PRODUCTS } from "../data";
 import Ic from "../icons";
+import { useLanguage } from "../LanguageContext";
 
 const buildWhatsappQuery = name => encodeURIComponent(`Hi! I'm interested in ${name}. Please share price & availability.`);
 
 export default function Products() {
+  const { t } = useLanguage();
   const tabs = Object.keys(PRODUCTS);
   const [active, setActive] = useState(tabs[0]);
 
@@ -12,9 +14,9 @@ export default function Products() {
     <section className="products" id="products">
       <div className="container">
         <div className="products-header">
-          <span className="section-badge">Our Stock</span>
-          <h2 className="section-title">Everything Your Farm Needs</h2>
-          <p className="section-sub">Quality brands at fair prices. Tap any product to enquire via WhatsApp instantly.</p>
+          <span className="section-badge">{t("products.badge")}</span>
+          <h2 className="section-title">{t("products.title")}</h2>
+          <p className="section-sub">{t("products.sub")}</p>
         </div>
         <div className="tabs">
           {tabs.map(tab => (
@@ -44,7 +46,7 @@ export default function Products() {
                   rel="noreferrer"
                   className="btn btn-whatsapp"
                 >
-                  {Ic.wa} Inquire on WhatsApp
+                  {Ic.wa} {t("products.whatsapp")}
                 </a>
               </div>
             </div>

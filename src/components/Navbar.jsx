@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Ic from "../icons";
+import { useLanguage } from "../LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { locale, setLocale, t, LANGUAGE_NAMES } = useLanguage();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -15,6 +17,13 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
   };
+
+  const navItems = [
+    ["home", "home"],
+    ["products", "products"],
+    ["soil", "soilguide"],
+    ["contact", "contact"],
+  ];
 
   return (
     <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
@@ -33,18 +42,25 @@ export default function Navbar() {
         </div>
 
         <ul className="nav-links">
-          {[["Home", "home"], ["Our Products", "products"], ["Soil Advice", "soilguide"], ["Store Location", "contact"]].map(([label, id]) => (
+          {navItems.map(([key, id]) => (
             <li key={id}>
               <a href={`#${id}`} onClick={e => { e.preventDefault(); scrollToSection(id); }}>
-                {label}
+                {t(`nav.${key}`)}
               </a>
             </li>
           ))}
         </ul>
 
-        <a href="tel:+918179914909" className="btn btn-amber" style={{ display: "flex" }}>
-          {Ic.phone} Call Now
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
+          <a href="tel:+918179914909" className="btn btn-amber" style={{ display: "flex" }}>
+            {Ic.phone} {t("nav.callNow")}
+          </a>
+          <select value={locale} onChange={e => setLocale(e.target.value)} className="lang-select" style={{ padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid #ccc", background: "white", color: "#2d6a4f" }}>
+            {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
+              <option key={code} value={code}>{name}</option>
+            ))}
+          </select>
+        </div>
 
         <button className={`hamburger${open ? " open" : ""}`} onClick={() => setOpen(o => !o)} aria-label="Menu">
           <span />
@@ -53,12 +69,17 @@ export default function Navbar() {
         </button>
       </div>
       <div className={`mobile-menu${open ? " open" : ""}`}>
-        {[["Home", "home"], ["Our Products", "products"], ["Soil Advice", "soilguide"], ["About Us", "about"], ["Store Location", "contact"]].map(([label, id]) => (
+        {[["home", "home"], ["products", "products"], ["soil", "soilguide"], ["about", "about"], ["contact", "contact"]].map(([key, id]) => (
           <a key={id} href={`#${id}`} onClick={e => { e.preventDefault(); scrollToSection(id); }}>
-            {label}
+            {t(`nav.${key}`)}
           </a>
         ))}
-        <a href="tel:+918179914909" className="btn btn-amber">{Ic.phone} Call Shop Now</a>
+        <a href="tel:+918179914909" className="btn btn-amber">{Ic.phone} {t("nav.callNow")}</a>
+        <select value={locale} onChange={e => setLocale(e.target.value)} className="lang-select" style={{ marginTop: "1rem", width: "100%", padding: "0.75rem", borderRadius: "8px", border: "1px solid #ccc", background: "white", color: "#2d6a4f" }}>
+          {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
+            <option key={code} value={code}>{name}</option>
+          ))}
+        </select>
       </div>
     </nav>
   );

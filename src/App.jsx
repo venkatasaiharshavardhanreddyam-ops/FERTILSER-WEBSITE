@@ -6,10 +6,11 @@ import Products from "./components/Products";
 import SoilGuide from "./components/SoilGuide";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import { LanguageProvider } from "./LanguageContext";
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <TopBar />
       <Navbar />
       <Hero />
@@ -30,6 +31,6 @@ export default function App() {
         </svg>
         <span>WhatsApp Us</span>
       </a>
-    </>
+    </LanguageProvider>
   );
 }
