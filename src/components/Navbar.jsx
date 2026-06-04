@@ -51,11 +51,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-          <a href="tel:+918179914909" className="btn btn-amber" style={{ display: "flex" }}>
+        <div className="navbar-actions">
+          <a href="tel:+918179914909" className="btn btn-amber">
             {Ic.phone} {t("nav.callNow")}
           </a>
-          <select value={locale} onChange={e => setLocale(e.target.value)} className="lang-select" style={{ padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid #ccc", background: "white", color: "#2d6a4f" }}>
+          <select value={locale} onChange={e => setLocale(e.target.value)} className="lang-select">
             {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
               <option key={code} value={code}>{name}</option>
             ))}
